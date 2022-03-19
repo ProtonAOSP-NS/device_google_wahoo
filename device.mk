@@ -29,8 +29,7 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/google/camera \
     hardware/google/camera \
     hardware/google/interfaces \
-    hardware/google/pixel \
-    hardware/qcom/msm8998
+    hardware/google/pixel
 
 PRODUCT_COPY_FILES += \
     device/google/wahoo/default-permissions.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default-permissions/default-permissions.xml \
@@ -55,6 +54,8 @@ SRC_DISPLAY_HAL_DIR := hardware/qcom/display/msm8998
 SRC_CAMERA_HAL_DIR := hardware/qcom/camera/msm8998
 
 TARGET_SYSTEM_PROP := $(TARGET_SYSTEM_PROP) $(LOCAL_PATH)/system.prop
+
+PRODUCT_VENDOR_KERNEL_HEADERS := $(LOCAL_PATH)/kernel-headers
 
 $(call inherit-product, device/google/wahoo/utils.mk)
 
